@@ -1,0 +1,160 @@
+body {
+  background-color: #f0f0f0;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Mencegah scrollbar muncul karena animasi */  
+}
+
+.containerUcapan {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(10, 5, 5, 0.605);
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+}
+
+h1 {
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.falling-objects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Agar tidak menghalangi interaksi dengan elemen di bawahnya */
+}
+
+.falling-object {
+  position: absolute;
+  animation: fall linear infinite; 
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh); 
+  }
+  100% {
+    transform: translateY(100vh); 
+  }
+}
+
+.love {
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/love3.png"); /* Ganti "love.png" dengan nama file gambarmu */
+  background-size: cover; 
+}
+
+.loveMerah {
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/lovemerah.png"); /* Ganti "love.png" dengan nama file gambarmu */
+  background-size: cover; 
+}
+
+.balloon {
+  width: 50px;
+  height: 60px;
+  background-image: url("../images/balon2.png"); /* Ganti "balloon.png" dengan nama file gambarmu */
+  background-size: cover; 
+  border-radius: 0; /* Hapus border-radius karena kita sudah pakai gambar */
+}
+
+.loveArt {
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/loveart.png"); /* Ganti "balloon.png" dengan nama file gambarmu */
+  background-size: cover; 
+  border-radius: 0; /* Hapus border-radius karena kita sudah pakai gambar */
+}
+
+/* Untuk layar dengan lebar maksimum 768px (misalnya, HP) */
+@media (max-width: 768px) {
+  .containerUcapan {
+    padding: 20px; /* Kurangi padding */
+  }
+
+  h1 {
+    font-size: 2em; /* Perkecil ukuran font */
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  img {
+    max-width: 90%; /* Sesuaikan lebar gambar */
+  }
+
+  .love {
+    width: 15px; /* Perkecil ukuran love */
+    height: 15px;
+  }
+
+  .balloon {
+    width: 20px; /* Perkecil ukuran balon */
+    height: 30px;
+  }
+
+  .containerUcapan {
+    width: 100%;
+    padding: 15px;
+  }
+  
+}
+
+
+#countdown {
+  font-size: 4em;
+  text-align: center;
+}
+
+.zoomOut {
+  animation: zoomOut 0.5s forwards;
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+#cardUcapan.zoomOut {
+  animation: zoomOut 1s forwards; /* Animasi zoomOut */
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
